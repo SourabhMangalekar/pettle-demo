@@ -1,0 +1,27 @@
+<div class="home-wrapper container">
+    <div class="row g-4 d-flex justify-content-between">
+        <div class="col-12 col-lg-8">
+            <mat-card>
+                <full-calendar [options]="calendarOptions" [deepChangeDetection]="true"></full-calendar>
+            </mat-card>
+        </div>
+
+        <div class="col-12 col-lg-4 list-wrapper d-flex flex-column align-items-center">
+            <mat-card class="my-2 user-card cusror-pointer" *ngFor="let user of userList">
+                <div class="row g-1 ">
+                    <div class="col-8 col-sm-6 col-md-6 col-lg-12 col-xxl-6">
+                        <div class="d-flex flex-column">
+                            <h5 class="user-name my-1">{{user.name.firstname}}&nbsp;{{user.name.lastname}}</h5>
+                            <h6 class="my-1">{{user.phone}}</h6>
+                            <span>{{user.address.number}}, {{user.address.street}}</span>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-6 col-md-6 col-lg-12 col-xxl-6">
+                        <img class="w-100" [src]="user.doggoImage" alt="doggo">
+                    </div>
+                </div>
+
+            </mat-card>
+        </div>
+    </div>
+</div>
